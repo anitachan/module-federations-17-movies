@@ -4,7 +4,8 @@ module.exports = withModuleFederationPlugin({
   name: 'app2-details',
 
   exposes: {
-    './Module': './projects/app2-details/src/app/ui/ui.module.ts',
+    // './Module': './projects/app2-details/src/app/ui/ui.module.ts',
+    './routes': './projects/app2-details/src/app/app.routes.ts',
   },
 
   shared: {

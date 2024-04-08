@@ -26,8 +26,8 @@ export const routes: Routes = [
       loadRemoteModule({
         type: 'manifest',
         remoteName: 'app2-details',
-        exposedModule: './Module',
-      }).then((m) => m.UiModule),
+        exposedModule: './routes',
+      }).then((m) => m.routes),
   },
   // { path: 'search/:query', component: SearchComponent },
   {
