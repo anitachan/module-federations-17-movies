@@ -53,6 +53,10 @@
                 {
                   "replace": "projects/host/src/environments/environment.ts",
                   "with": "projects/host/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "projects/host/src/assets/mf.manifest.json",
+                  "with": "projects/host/src/assets/mf.manifest.prod.json"
                 }
               ],
               "outputHashing": "all",

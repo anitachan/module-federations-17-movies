@@ -2,6 +2,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Component, ComponentRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Cast } from 'shared-lib';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-mfe-cast-components',
@@ -31,7 +32,7 @@ export class MfeCastComponentsComponent implements OnInit, OnDestroy {
   async load(): Promise<void> {
     const m = await loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteEntry: environment.remoteEntries.app4Cast,
       exposedModule: './Component',
     });
 

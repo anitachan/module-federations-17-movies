@@ -15,6 +15,7 @@
     "test:shared-lib": "jest --collectCoverage -c projects/shared-lib/jest.config.js",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "build:lib": "ng build shared-lib",
+    "build:all": "ng build host --configuration production && ng build app2-details --configuration production && ng build app3-favorites --configuration production && ng build app4-cast --configuration production",
     "prepare": "husky install",
     "test:staged": "jest --coverage --bail --findRelatedTests --passWithNoTests",
     "lint-all": "eslint --fix --ext .ts projects/host projects/app2-details projects/app3-favorites projects/app4-cast projects/shared-lib"

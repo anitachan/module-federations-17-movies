@@ -1,0 +1,9 @@
+services:
+  movies:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: movies
+    ports:
+     - "8080:80"
+    restart: unless-stopped

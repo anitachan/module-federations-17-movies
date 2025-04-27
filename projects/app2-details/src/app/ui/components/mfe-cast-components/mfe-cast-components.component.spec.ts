@@ -4,6 +4,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { ComponentRef } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Cast } from 'shared-lib';
+import { environment } from '../../../../environments/environment';
 import { MfeCastComponentsComponent } from './mfe-cast-components.component';
 
 jest.mock('@angular-architects/module-federation', () => ({
@@ -42,7 +43,7 @@ describe('MfeCastComponentsComponent', () => {
 
     expect(loadRemoteModule).toHaveBeenCalledWith({
       type: 'module',
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteEntry: environment.remoteEntries.app4Cast,
       exposedModule: './Component',
     });
 
