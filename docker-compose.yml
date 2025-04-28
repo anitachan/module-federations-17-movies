@@ -7,3 +7,7 @@ services:
     ports:
      - "8080:80"
     restart: unless-stopped
+    environment:
+      - REMOTE_ENTRY_APP2_DETAILS=/app2-details/remoteEntry.js
+      - REMOTE_ENTRY_APP3_FAVORITES=/app3-favorites/remoteEntry.js
+      - REMOTE_ENTRY_APP4_CAST=/app4-cast/remoteEntry.js
