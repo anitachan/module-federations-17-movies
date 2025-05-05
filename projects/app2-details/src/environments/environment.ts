@@ -4,8 +4,6 @@
 
 export const environment = {
   production: false,
-  tmdbUrl: 'https://api.themoviedb.org/3/',
-  tmbdApiKey: 'a551d12bf8b14129f2dfebaea90ff12d',
   tmdbImage: 'https://image.tmdb.org/t/p/',
   remoteEntries: {
     app4Cast: 'http://localhost:4203/remoteEntry.js',

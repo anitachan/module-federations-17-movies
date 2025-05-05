@@ -1,5 +1,10 @@
 #!/bin/sh
 
+envsubst '${TMDB_API_URL} ${TMDB_API_HOST} ${TMDB_BEARER_TOKEN}' \
+  < /etc/nginx/templates/default.conf.template \
+  > /etc/nginx/conf.d/default.conf
+
+
 echo "{
   \"app2-details\": \"${REMOTE_ENTRY_APP2_DETAILS}\",
   \"app3-favorites\": \"${REMOTE_ENTRY_APP3_FAVORITES}\",

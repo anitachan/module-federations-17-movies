@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { environment } from '../../../environments/environment';
 import { GetVideosMovieService } from './get-videos-movie.service';
 
 const mockVideoMovieData = {
@@ -45,7 +44,7 @@ const mockVideoMovieData = {
 describe('CustomGetVideosMovieService', () => {
   let service: GetVideosMovieService;
   let httpCtrl: HttpTestingController;
-  const tmdbUrl = environment.tmdbUrl;
+  const base = '/tmdb';
 
   beforeEach(() => {
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
@@ -59,7 +58,7 @@ describe('CustomGetVideosMovieService', () => {
 
   it('should get and return movie videos with the movie id', (done) => {
     const movieId = 'movieId';
-    const url = `${tmdbUrl}movie/${movieId}/videos?api_key=${service.params.api_key}&page=${service.params.page}`;
+    const url = `${base}/movie/${movieId}/videos?page=${service.params.page}`;
     const subscription = service.getVideosMovie(movieId).subscribe((response) => {
       expect(response).toBeTruthy();
       expect(response).toEqual(mockVideoMovieData);

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { MovieDetail } from 'shared-lib';
-import { environment } from '../../../environments/environment';
 import { ONE } from '../utils/constants/number.constants';
 
 @Injectable({
@@ -11,20 +10,18 @@ import { ONE } from '../utils/constants/number.constants';
 })
 export class MovieService {
   private page = ONE;
-  private tmdbUrl = environment.tmdbUrl;
-  private tmbdApiKey = environment.tmbdApiKey;
+  private base = '/tmdb';
 
   constructor(private httpClient: HttpClient) {}
 
   get params() {
     return {
-      api_key: this.tmbdApiKey,
       page: this.page.toString(),
     };
   }
 
   getMovie(movieId: string): Observable<MovieDetail> {
-    const url = `${this.tmdbUrl}movie/${movieId}`;
+    const url = `${this.base}/movie/${movieId}`;
     return this.httpClient.get<MovieDetail>(url, { params: this.params });
   }
 }

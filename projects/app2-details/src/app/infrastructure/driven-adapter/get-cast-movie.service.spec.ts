@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { environment } from '../../../environments/environment';
 import { GetCastMovieService } from './get-cast-movie.service';
 
 const mockCastData = {
@@ -321,7 +320,7 @@ const mockCastData = {
 describe('CustomGetCastMovieService', () => {
   let service: GetCastMovieService;
   let httpCtrl: HttpTestingController;
-  const tmdbUrl = environment.tmdbUrl;
+  const base = '/tmdb';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -337,7 +336,7 @@ describe('CustomGetCastMovieService', () => {
 
   it('should get and return movie cast with the movie id', (done) => {
     const movieId = 'movieId';
-    const url = `${tmdbUrl}movie/${movieId}/credits?api_key=${service.params.api_key}&page=${service.params.page}`;
+    const url = `${base}/movie/${movieId}/credits?page=${service.params.page}`;
     const subscription = service.getCastMovie(movieId).subscribe((response) => {
       expect(response).toBeTruthy();
       expect(response).toEqual(mockCastData.cast);

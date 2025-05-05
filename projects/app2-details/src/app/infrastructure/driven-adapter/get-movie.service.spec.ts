@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { environment } from '../../../environments/environment';
 import { CustomGetMovieService } from './get-movie.service';
 
 describe('CustomMoviesService', () => {
   let service: CustomGetMovieService;
   let httpCtrl: HttpTestingController;
-  const tmdbUrl = environment.tmdbUrl;
+  const base = '/tmdb';
 
   const mockMovieData = {
     adult: false,
@@ -96,7 +95,7 @@ describe('CustomMoviesService', () => {
 
   it('should get and return movie detail with the movie id', (done) => {
     const movieId = 'movieId';
-    const url = `${tmdbUrl}movie/${movieId}?api_key=${service.params.api_key}&page=${service.params.page}`;
+    const url = `${base}/movie/${movieId}?page=${service.params.page}`;
     const subscription = service.getMovie(movieId).subscribe((response) => {
       expect(response).toBeTruthy();
       expect(response).toEqual(mockMovieData);

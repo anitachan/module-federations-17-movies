@@ -8,6 +8,9 @@ services:
      - "8080:80"
     restart: unless-stopped
     environment:
-      - REMOTE_ENTRY_APP2_DETAILS=/app2-details/remoteEntry.js
-      - REMOTE_ENTRY_APP3_FAVORITES=/app3-favorites/remoteEntry.js
-      - REMOTE_ENTRY_APP4_CAST=/app4-cast/remoteEntry.js
+      - TMDB_API_URL=${TMDB_API_URL}
+      - TMDB_API_HOST=${TMDB_API_HOST}
+      - TMDB_BEARER_TOKEN=${TMDB_BEARER_TOKEN}
+      - REMOTE_ENTRY_APP2_DETAILS=${REMOTE_ENTRY_APP2_DETAILS}
+      - REMOTE_ENTRY_APP3_FAVORITES=${REMOTE_ENTRY_APP3_FAVORITES}
+      - REMOTE_ENTRY_APP4_CAST=${REMOTE_ENTRY_APP4_CAST}

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { environment } from '../../../environments/environment';
 import { EIGHT, FIVE, FOUR, NINE, ONE, SEVEN, SIX, THREE, TWO } from '../../core/constants/number.constants';
 import { CustomGetMoviesService } from './custom-get-movies.service';
 
 describe('CustomMoviesService', () => {
   let service: CustomGetMoviesService;
   let httpCtrl: HttpTestingController;
+  const base = '/tmdb';
 
   const mockMoviesNowPlayingData = {
     dates: {
@@ -100,8 +100,8 @@ describe('CustomMoviesService', () => {
   });
 
   it('should get and return now playing movies', (done) => {
-    const { api_key, page } = service.getParams(ONE);
-    const url = `${environment.tmdbUrl}movie/now_playing?api_key=${api_key}&page=${page}`;
+    const { page } = service.getParams(ONE);
+    const url = `${base}/movie/now_playing?page=${page}`;
     const subscription = service.getMovies(ONE).subscribe((response) => {
       expect(response).toBeTruthy();
       expect(response).toEqual(mockMoviesNowPlayingData.results);

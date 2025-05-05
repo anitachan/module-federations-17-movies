@@ -23,4 +23,13 @@ server {
     root /usr/share/nginx/html/;
     try_files $uri $uri/=404;
   }
+
+  location /tmdb/ {
+    resolver 8.8.8.8 valid=300s;
+    rewrite ^/tmdb/(.*)$ /$1 break;
+    proxy_ssl_server_name on;
+    proxy_pass ${TMDB_API_URL}/$1?$args;
+    proxy_set_header Host ${TMDB_API_HOST};
+    proxy_set_header Authorization "Bearer ${TMDB_BEARER_TOKEN}";
+  }
 }
