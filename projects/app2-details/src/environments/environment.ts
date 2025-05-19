@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  tmdbImage: 'https://image.tmdb.org/t/p/',
   remoteEntries: {
     app4Cast: 'http://localhost:4203/remoteEntry.js',
   },

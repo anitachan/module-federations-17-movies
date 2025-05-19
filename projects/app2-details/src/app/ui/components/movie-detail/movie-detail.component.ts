@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Cast, Favorite, Genre, MovieDetail, VideoItem } from 'shared-lib';
-import { environment } from '../../../../environments/environment';
 import { GetCastMovieUsecaseService } from '../../../domain/cast/usecases/get-cast-movie/get-cast-movie.usecase.service';
 import { GetMovieUsecaseService } from '../../../domain/movie/usecases/get-movie/get-movie.usecase.service';
 import { GetVideoMovieUsecaseService } from '../../../domain/videos/usecases/get-video-movie/get-video-movie.usecase.service';
@@ -24,7 +23,7 @@ export class MovieDetailComponent implements OnInit {
   movieId: string | null;
   favorite = false;
   selectedActor = '';
-  urlImage: string = environment.tmdbImage;
+  urlImage: string = '/images/';
 
   constructor(
     private getMovieUsecaseService: GetMovieUsecaseService,

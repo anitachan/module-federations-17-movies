@@ -1,6 +1,6 @@
 #!/bin/sh
 
-envsubst '${TMDB_API_URL} ${TMDB_API_HOST} ${TMDB_BEARER_TOKEN}' \
+envsubst '${TMDB_API_URL} ${TMDB_API_HOST} ${TMDB_BEARER_TOKEN} ${TMDB_IMAGE_PATH} ${TMDB_IMAGE_HOST}' \
   < /etc/nginx/templates/default.conf.template \
   > /etc/nginx/conf.d/default.conf
 

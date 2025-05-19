@@ -9,5 +9,11 @@
     "headers": {
       "Authorization": "Bearer your_token"
     }
+  },
+  "/images/*": {
+    "target": "https://image.tmdb.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/images": "/t/p/" }
   }
 }

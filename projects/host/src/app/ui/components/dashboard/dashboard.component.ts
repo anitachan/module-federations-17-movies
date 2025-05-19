@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedLibModule } from 'shared-lib';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,5 +9,5 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  urlImage: string = environment.tmdbImage;
+  urlImage: string = '/images/';
 }

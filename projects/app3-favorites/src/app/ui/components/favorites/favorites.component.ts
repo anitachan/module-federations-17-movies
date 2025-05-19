@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-favorites',
@@ -8,5 +7,5 @@ import { environment } from '../../../../environments/environment';
 })
 export class FavoritesComponent {
   imageHeight: string = '75vh';
-  urlImage: string = environment.tmdbImage;
+  urlImage: string = '/images/';
 }

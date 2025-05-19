@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  tmdbImage: 'https://image.tmdb.org/t/p/',
 };
 
 /*

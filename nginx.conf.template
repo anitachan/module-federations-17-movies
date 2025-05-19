@@ -32,4 +32,16 @@ server {
     proxy_set_header Host ${TMDB_API_HOST};
     proxy_set_header Authorization "Bearer ${TMDB_BEARER_TOKEN}";
   }
+
+   location ~ ^/images/(w?\d+|original)/(.*)$ {
+    resolver 8.8.8.8 valid=300s;
+    proxy_ssl_server_name on;
+    set $size       $1;
+    set $img_path   $2;
+    proxy_pass ${TMDB_IMAGE_HOST}${TMDB_IMAGE_PATH}/$size/$img_path;
+    proxy_set_header Host image.tmdb.org;
+    proxy_set_header Referer "";
+    proxy_set_header User-Agent $http_user_agent;
+    add_header X-Upstream-Addr $upstream_addr always;
+  }
 }
