@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,23 +16,17 @@ import { MoviesGridComponent } from './ui/components/movies-grid/movies-grid.com
 import { StarRatingComponent } from './ui/components/star-rating/star-rating.component';
 import { PosterPipe } from './ui/pipes/poster.pipe';
 
-@NgModule({
-  declarations: [SharedLibComponent, MoviesGridComponent, StarRatingComponent, PosterPipe, LoadingComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    RouterModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatTooltipModule,
-    MatGridListModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    InfiniteScrollModule,
-  ],
-  exports: [SharedLibComponent, MoviesGridComponent, StarRatingComponent, PosterPipe],
-})
+@NgModule({ declarations: [SharedLibComponent, MoviesGridComponent, StarRatingComponent, PosterPipe, LoadingComponent],
+    exports: [SharedLibComponent, MoviesGridComponent, StarRatingComponent, PosterPipe], imports: [CommonModule,
+        RouterModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatTooltipModule,
+        MatGridListModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        InfiniteScrollModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class SharedLibModule {
   static forRoot(configuration: ISharedLibConfigurationModel): ModuleWithProviders<SharedLibModule> {
     let conf = DEFAULT_CONFIGURATION;
