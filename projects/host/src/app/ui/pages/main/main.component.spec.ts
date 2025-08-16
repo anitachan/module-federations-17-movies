@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 import { MockComponents } from 'ng-mocks';
 import { of } from 'rxjs';
 import { SidenavBarComponent } from '../../components/sidenav-bar/sidenav-bar.component';
@@ -18,7 +18,7 @@ describe('MainComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterModule.forRoot([{ path: '', component: MainComponent }])],
       declarations: [MainComponent, MockComponents(SidenavBarComponent, ToolbarComponent)],
       providers: [{ provide: BreakpointObserver, useValue: mockBreakpointObserver }],
     }).compileComponents();
