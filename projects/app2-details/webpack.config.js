@@ -2,11 +2,9 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
   name: 'app2-details',
-
   exposes: {
     './Module': './projects/app2-details/src/app/ui/ui.module.ts',
   },
-
   shared: {
     ...shareAll({
       singleton: true,

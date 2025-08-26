@@ -1,4 +1,4 @@
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteModule } from '@angular-architects/module-federation-runtime';
 import { Component, ComponentRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { Cast } from 'shared-lib';
@@ -8,6 +8,7 @@ import { environment } from '../../../../environments/environment';
   selector: 'app-mfe-cast-components',
   templateUrl: './mfe-cast-components.component.html',
   styleUrls: ['./mfe-cast-components.component.scss'],
+  standalone: false,
 })
 export class MfeCastComponentsComponent implements OnInit, OnDestroy {
   @ViewChild('placeHolder', { read: ViewContainerRef })

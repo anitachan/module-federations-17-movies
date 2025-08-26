@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'poster',
+  standalone: false,
 })
 export class PosterPipe implements PipeTransform {
   transform(poster: string, url: string, resolution: string): string {

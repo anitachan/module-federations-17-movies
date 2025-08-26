@@ -10,7 +10,6 @@ import { SidenavBar } from '../../models/sidenav-bar.interface';
 
 @Component({
   selector: 'app-main',
-  standalone: true,
   imports: [CommonModule, ToolbarComponent, SidenavBarComponent, RouterModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',

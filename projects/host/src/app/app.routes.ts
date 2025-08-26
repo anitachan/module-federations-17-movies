@@ -1,4 +1,4 @@
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteModule } from '@angular-architects/module-federation-runtime';
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './ui/components/dashboard/dashboard.component';
 import { SidenavBar } from './ui/models/sidenav-bar.interface';

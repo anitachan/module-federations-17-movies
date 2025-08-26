@@ -8,6 +8,7 @@ import { ONE } from '../../utils/constants/number.constants';
   selector: 'app-movies-grid',
   templateUrl: './movies-grid.component.html',
   styleUrls: ['./movies-grid.component.scss'],
+  standalone: false,
 })
 export class MoviesGridComponent implements OnInit, OnDestroy {
   loading: boolean = false;

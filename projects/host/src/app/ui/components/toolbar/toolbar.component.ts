@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
-  standalone: true,
   imports: [RouterModule, MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],

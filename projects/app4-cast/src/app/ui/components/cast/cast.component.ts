@@ -5,6 +5,7 @@ import { Cast } from 'shared-lib';
   selector: 'app-cast',
   templateUrl: './cast.component.html',
   styleUrls: ['./cast.component.scss'],
+  standalone: false,
 })
 export class CastComponent {
   urlImage: string = '/images/';

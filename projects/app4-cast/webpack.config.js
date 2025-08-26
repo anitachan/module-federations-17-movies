@@ -1,21 +1,17 @@
-const {
-  shareAll,
-  withModuleFederationPlugin,
-} = require("@angular-architects/module-federation/webpack");
+const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
 module.exports = withModuleFederationPlugin({
-  name: "mfe1",
+  name: 'app4-cast',
 
   exposes: {
-    "./Component":
-      "./projects/app4-cast/src/app/ui/components/cast/cast.component.ts",
+    './Component': './projects/app4-cast/src/app/ui/components/cast/cast.component.ts',
   },
 
   shared: {
     ...shareAll({
       singleton: true,
       strictVersion: true,
-      requiredVersion: "auto",
+      requiredVersion: 'auto',
     }),
   },
 });

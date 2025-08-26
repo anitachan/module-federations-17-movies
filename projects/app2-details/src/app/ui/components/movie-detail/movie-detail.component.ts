@@ -11,6 +11,7 @@ import { GetVideoMovieUsecaseService } from '../../../domain/videos/usecases/get
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss'],
+  standalone: false,
 })
 export class MovieDetailComponent implements OnInit {
   movieData$: Observable<{

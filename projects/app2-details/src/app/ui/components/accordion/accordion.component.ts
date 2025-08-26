@@ -6,6 +6,7 @@ import { TEN, THREE } from '../../utils/constants/number.constants';
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss'],
+  standalone: false,
 })
 export class AccordionComponent {
   @Input() movie: MovieDetail;

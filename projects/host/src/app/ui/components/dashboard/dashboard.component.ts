@@ -3,7 +3,6 @@ import { SharedLibModule } from 'shared-lib';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
   imports: [SharedLibModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],

@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteModule } from '@angular-architects/module-federation-runtime';
 import { ComponentRef } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Cast } from 'shared-lib';
 import { environment } from '../../../../environments/environment';
 import { MfeCastComponentsComponent } from './mfe-cast-components.component';
 
-jest.mock('@angular-architects/module-federation', () => ({
+jest.mock('@angular-architects/module-federation-runtime', () => ({
   loadRemoteModule: jest.fn(() => Promise.resolve({})),
 }));
 

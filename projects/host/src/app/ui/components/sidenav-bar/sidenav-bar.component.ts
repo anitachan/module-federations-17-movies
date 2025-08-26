@@ -8,7 +8,6 @@ import { SidenavBar } from '../../models/sidenav-bar.interface';
 
 @Component({
   selector: 'app-sidenav-bar',
-  standalone: true,
   imports: [CommonModule, RouterModule, MatSidenavModule, MatListModule, MatIconModule],
   templateUrl: './sidenav-bar.component.html',
   styleUrls: ['./sidenav-bar.component.scss'],
